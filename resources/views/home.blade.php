@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{{-- Imports or extends the base.blade.php content to home.blade.php --}}
+@extends('layouts.base')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{{-- Passes the name value to layouts.base --}}
+@section('name', 'Joe')
 
-<body>
-    {{-- Things that are preceded with @ is called blade directives --}}
-    @if($name === "Joe")
-        <h1>Hello Admin!</h1>
-    @else
-        {{-- Access the passed variable 'name' from route to view --}}
-        <h1>Hello {{ $name }}!</h1>
-    @endif
-</body>
-
-</html>
+{{-- Anything within the section is rendered within the layout's @yield --}}
+@section('content')
+    <h1 class="text-4xl font-bold">Home</h1>
+    <p class="mt-4 text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque in saepe ea eius ex recusandae impedit earum! Aperiam quibusdam quos voluptate quisquam cum saepe incidunt odio delectus! Eius, obcaecati asperiores.</p>
+@endsection
