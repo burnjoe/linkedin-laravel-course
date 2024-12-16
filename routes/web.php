@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Handles the request from index() method of WelcomeController class
+Route::get('/', [WelcomeController::class, 'index']);
 
 // Passes the assoc array with 'name' as element in 'home' view 
 // Maps it as independent variable in view
